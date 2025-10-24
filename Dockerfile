@@ -15,7 +15,7 @@ ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # 현재 위치
-RUN PWD
+RUN pwd
 
 # 애플리케이션 빌드 파일 복사
 COPY build/libs/${JAR_NAME} $APP_ROOT_PATH/$JAR_NAME
