@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: demo1
+  profiles:
+    active: ${spring.profiles.active:local}
+
+server:
+  port: ${port:9000}
