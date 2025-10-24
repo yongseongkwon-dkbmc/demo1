@@ -3,7 +3,7 @@ FROM openjdk:21-ea-slim
 
 # 환경 변수 설정
 ENV APP_ROOT_PATH=/DMS/application/apps
-ENV JAR_NAME=demo1-0.0.1-SNAPSHOT-plain.jar
+ENV JAR_NAME=demo1-0.0.1-SNAPSHOT.jar
 
 WORKDIR /DMS
 
