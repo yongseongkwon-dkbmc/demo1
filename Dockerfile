@@ -14,12 +14,13 @@ RUN apt-get update && apt-get install -y tzdata
 ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+# 임시 주석
 # 애플리케이션 파일 복사
-COPY lib/libsapjco3.so /usr/lib/libsapjco3.so
-RUN chmod 777 /usr/lib/libsapjco3.so
+# COPY lib/libsapjco3.so /usr/lib/libsapjco3.so
+# RUN chmod 777 /usr/lib/libsapjco3.so
 # libsapjco3.so가 복사되었는지 확인
-RUN ls -al /usr/lib
-COPY build/libs/${JAR_NAME} $APP_ROOT_PATH/$JAR_NAME
+# RUN ls -al /usr/lib
+# COPY build/libs/${JAR_NAME} $APP_ROOT_PATH/$JAR_NAME
 
 # openjdk 17 설치
 #RUN apt-get update
