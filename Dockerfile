@@ -16,11 +16,10 @@ WORKDIR /var/jenkins_home/workspace/nx-spring-batch
 # # 타임존 환경변수 설정
 
 ENV TZ=Asia/Seoul
-ENV DEBIAN_FRONTEND=noninteractive
 
 # tzdata 설치 및 타임존 설정
-RUN apt-get update && \
-    apt-get install -y tzdata && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     echo $TZ > /etc/timezone && \
     apt-get clean && \
