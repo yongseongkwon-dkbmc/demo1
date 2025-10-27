@@ -6,13 +6,25 @@ ENV APP_ROOT_PATH=/NEXEN_CRM/application/apps
 ENV JAR_NAME=nx-spring-batch-0.0.1-SNAPSHOT.jar
 #ENV MEMORY=1028
 WORKDIR /var/jenkins_home/workspace/nx-spring-batch
+#
+# # 타임존 설정을 위해 tzdata 설치
+# RUN apt-get update && apt-get install -y tzdata
+#
+# # 타임존 설정
+# ENV TZ=Asia/Seoul
+# RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+# # 타임존 환경변수 설정
 
-# 타임존 설정을 위해 tzdata 설치
-RUN apt-get update && apt-get install -y tzdata
-
-# 타임존 설정
 ENV TZ=Asia/Seoul
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ENV DEBIAN_FRONTEND=noninteractive
+
+# tzdata 설치 및 타임존 설정
+RUN apt-get update && \
+    apt-get install -y tzdata && \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    echo $TZ > /etc/timezone && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # 임시 주석
 # 애플리케이션 파일 복사
