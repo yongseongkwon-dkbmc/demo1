@@ -1,5 +1,5 @@
 # 베이스 이미지 선택
-FROM openjdk:17-ea-29-jdk-slim
+FROM openjdk:21-jdk-slim
 
 # 환경 변수 설정
 ENV APP_ROOT_PATH=/NEXEN_CRM/application/apps
