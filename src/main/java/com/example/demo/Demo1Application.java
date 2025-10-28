@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 @SpringBootApplication
 public class Demo1Application {
 
@@ -19,6 +21,7 @@ public class Demo1Application {
                 Thread.sleep(1000);
                 String a = String.format("Hello World! %s", String.valueOf(i));
                 System.out.println(a);
+                System.out.println("Test" + a);
             }
         };
     }

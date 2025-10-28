@@ -5,8 +5,8 @@ FROM openjdk:21-jdk-slim
 ENV APP_ROOT_PATH=/NEXEN_CRM/application/apps
 ENV JAR_NAME=demo1-0.0.1-SNAPSHOT.jar
 #ENV MEMORY=1028
-WORKDIR /var/jenkins_home/workspace/nx-spring-batch
-#
+# WORKDIR /var/jenkins_home/workspace/nx-spring-batch
+
 # # 타임존 설정을 위해 tzdata 설치
 RUN apt-get update && apt-get install -y tzdata
 #
