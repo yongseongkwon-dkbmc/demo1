@@ -2,10 +2,8 @@
 FROM openjdk:21-ea-slim
 
 # 환경 변수 설정
-ENV APP_ROOT_PATH=/DMS/application/apps
+ENV APP_ROOT_PATH=/NEXEN_CRM/application
 ENV JAR_NAME=demo1-0.0.1-SNAPSHOT.jar
-
-WORKDIR /DMS
 
 # 타임존 설정을 위해 tzdata 설치
 RUN apt-get update && apt-get install -y tzdata
