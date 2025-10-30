@@ -17,7 +17,7 @@ public class Demo1Application {
         return args -> {
             for (int i = 10; i > 0; i--) {
                 Thread.sleep(1000);
-                String a = String.format("Hello World! %s", String.valueOf(i));
+                String a = String.format("Hello World! 좀 되라고 ", String.valueOf(i));
                 System.out.println(a);
             }
         };
